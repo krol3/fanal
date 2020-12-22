@@ -4,7 +4,7 @@ deps:
 
 .PHONY: test
 test:
-	go test ./...
+	go test -v -short -race -timeout 30s -coverprofile=coverage.txt -covermode=atomic ./...
 
 .PHONY: lint
 lint: devel-deps
